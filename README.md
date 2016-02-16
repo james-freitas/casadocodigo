@@ -1,4 +1,4 @@
-### Photo Web Application
+### Virtual Library Web Application
 
 ##### Using Eclipse Maven Plugin to run the project for the first time
 
