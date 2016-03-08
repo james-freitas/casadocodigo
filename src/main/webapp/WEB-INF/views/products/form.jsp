@@ -10,7 +10,12 @@
 </head>
 <body>
 	
-	<form:form method="post"  action="/casadocodigo/produtos" commandName="product" >
+	<form:form 
+		method="post"  
+		action="/casadocodigo/produtos" 
+		commandName="product"
+		enctype="multipart/form-data">
+		
 		<div>
 			<label for="title">Titulo</label>
 			<form:input path="title" />
@@ -43,6 +48,13 @@
 			</div>
 		
 		</c:forEach>
+		
+		<div>
+			<label for="summary">Sumário do livro</label>
+			<input type="file" name="summary" />
+			<form:errors path="summaryPath" />
+		</div>
+		
 		
 		<div>
 			<input type="submit" value="Enviar" />
