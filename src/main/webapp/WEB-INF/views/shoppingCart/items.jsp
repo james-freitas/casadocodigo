@@ -4,11 +4,11 @@
 <%@taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
 <%@ taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
-<%@taglib tagdir="/WEB-INF/tags" prefix="customTags"%>  
+<%-- <%@taglib tagdir="/WEB-INF/tags" prefix="customTags"%>   --%>
 
 <fmt:message key="shoppingCart.title" var="title" />
-<customTags:page bodyClass="cart" title="${title}">
-	<jsp:attribute name="extraScripts">
+<%-- <customTags:page bodyClass="cart" title="${title}"> --%>
+<%-- 	<jsp:attribute name="extraScripts"> --%>
 
 
 
@@ -44,8 +44,8 @@
 		});
 	});
 </script>
-</jsp:attribute>
-<jsp:body>
+<%-- </jsp:attribute> --%>
+<%-- <jsp:body> --%>
 <section class="container middle">
 <h2 id="cart-title">Seu carrinho de compras</h2>
 <table id="cart-table">
@@ -142,5 +142,5 @@ ${item.bookType}</td>
 publicamos!</a>
 </h2>
 </section>
-</jsp:body>
-</customTags:page>
+<%-- </jsp:body> --%>
+<%-- </customTags:page> --%>
