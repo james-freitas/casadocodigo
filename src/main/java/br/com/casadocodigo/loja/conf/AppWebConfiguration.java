@@ -1,5 +1,11 @@
 package br.com.casadocodigo.loja.conf;
 
+import java.util.concurrent.TimeUnit;
+
+import org.springframework.cache.CacheManager;
+import org.springframework.cache.annotation.EnableCaching;
+import org.springframework.cache.concurrent.ConcurrentMapCacheManager;
+import org.springframework.cache.guava.GuavaCacheManager;
 import org.springframework.context.MessageSource;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
@@ -14,18 +20,18 @@ import org.springframework.web.multipart.support.StandardServletMultipartResolve
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 import org.springframework.web.servlet.view.InternalResourceViewResolver;
 
+import com.google.common.cache.CacheBuilder;
+
 import br.com.casadocodigo.loja.component.FileSaver;
 import br.com.casadocodigo.loja.controller.HomeController;
 import br.com.casadocodigo.loja.dao.ProductDAO;
 import br.com.casadocodigo.loja.models.ShoppingCart;
 
 @EnableWebMvc
-@ComponentScan(basePackageClasses = { HomeController.class,	ProductDAO.class, 
-							FileSaver.class, ShoppingCart.class})
-
+@ComponentScan(basePackageClasses = { HomeController.class, ProductDAO.class, FileSaver.class, ShoppingCart.class })
+@EnableCaching
 public class AppWebConfiguration {
 
-	
 	@Bean
 	public InternalResourceViewResolver internalResourceViewResolver() {
 		InternalResourceViewResolver resolver = new InternalResourceViewResolver();
@@ -52,14 +58,31 @@ public class AppWebConfiguration {
 		registrar.registerFormatters(conversionService);
 		return conversionService;
 	}
-	
+
 	@Bean
 	public MultipartResolver multipartResolver() {
 		return new StandardServletMultipartResolver();
 	}
-	
+
 	@Bean
-	public RestTemplate restTemplate(){
+	public RestTemplate restTemplate() {
 		return new RestTemplate();
 	}
+
+	// @Bean
+	// public CacheManager cacheManager(){
+	// return new ConcurrentMapCacheManager();
+	// }
+
+	@Bean
+	public CacheManager cacheManager() {
+		CacheBuilder<Object, Object> builder = CacheBuilder.newBuilder()
+													.maximumSize(100)
+													.expireAfterAccess(5,TimeUnit.MINUTES);
+		GuavaCacheManager cacheManager = new GuavaCacheManager();
+		cacheManager.setCacheBuilder(builder);
+		return cacheManager;
+
+	}
+
 }

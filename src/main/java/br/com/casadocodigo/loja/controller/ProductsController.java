@@ -4,6 +4,8 @@ import javax.transaction.Transactional;
 import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cache.annotation.CacheEvict;
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Controller;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -43,6 +45,7 @@ public class ProductsController {
 	}
 	
 	@RequestMapping(method=RequestMethod.POST, name="saveProduct")
+	@CacheEvict(value="books", allEntries=true)
 	public ModelAndView save(@Valid Product product, 
 			BindingResult bindingResult,
 			RedirectAttributes redirectAttributes,
@@ -71,6 +74,7 @@ public class ProductsController {
 	
 	
 	@RequestMapping(method=RequestMethod.GET)
+	@Cacheable(value="books")
 	public ModelAndView list(){
 		ModelAndView modelAndView = new ModelAndView("products/list");
 		modelAndView.addObject("products", productDAO.list());
