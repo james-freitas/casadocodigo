@@ -19,7 +19,7 @@ import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.format.annotation.DateTimeFormat.ISO;
 
 @Entity
-@XmlRootElement
+@XmlRootElement(name="products")
 public class Product {
 
 	@Id
