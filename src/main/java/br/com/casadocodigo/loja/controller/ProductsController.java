@@ -69,8 +69,9 @@ public class ProductsController {
 			return form(product);
 		}
 		
-		String webPath = fileSaver.write("uploaded-images", summary);
-		product.setSummaryPath(webPath);
+		//  Integração com Amazon para salvar arquivos
+		//  String webPath = fileSaver.write("uploaded-images", summary);
+		//  product.setSummaryPath(webPath);
 		
 		productDAO.save(product);
 		redirectAttributes.addFlashAttribute("sucesso", "Produto cadastrado com sucesso");

@@ -2,7 +2,7 @@
     pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ taglib uri="http://www.springframework.org/tags" prefix="spring"%>
-<%@ taglib uri="http://www.springframework.org/security/tags" prefix="security" %>
+<%@ taglib uri="http://www.springframework.org/security/tags" prefix="sec" %>
     
 <html>
 <head>
@@ -13,8 +13,14 @@
  <h1>Listagem de produtos</h1>
  
  <br />
- <security:authentication property="principal" var="user" />
- Olá ${ user.name }
+ 	<sec:authorize access="isAuthenticated()">
+		<sec:authentication property="principal" var="user" />
+		<div>
+		 	Olá ${ user.name }
+		</div>
+				
+ 	</sec:authorize>
+ 
  
  <br />
  

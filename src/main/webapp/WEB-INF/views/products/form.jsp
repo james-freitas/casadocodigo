@@ -17,8 +17,6 @@
 		commandName="product"
 		enctype="multipart/form-data">
 		
-
-		
 		<div>
 			<label for="title">Titulo</label>
 			<form:input path="title" />

@@ -12,8 +12,6 @@ import org.springframework.stereotype.Repository;
 
 import br.com.casadocodigo.loja.models.User;
 
-
-
 @Repository
 public class UserDAO implements UserDetailsService{
 
@@ -33,7 +31,4 @@ public class UserDAO implements UserDetailsService{
 		
 		return users.get(0);
 	}
-
-	
-	
 }
