@@ -13,7 +13,7 @@ import com.amazonaws.services.s3.model.ObjectMetadata;
 @Component
 public class FileSaver {
 
-	@Autowired
+/*	@Autowired
 	private AmazonS3Client s3;
 
 	public String write(String baseFolder, MultipartFile multipartFile) {
@@ -28,5 +28,5 @@ public class FileSaver {
 		} catch (AmazonClientException | IOException e) {
 			throw new RuntimeException(e);
 		}
-	}
+	}*/
 }

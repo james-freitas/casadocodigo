@@ -31,8 +31,8 @@ public class ProductsController {
 	@Autowired
 	private ProductDAO productDAO;
 	
-	@Autowired
-	private FileSaver fileSaver;
+/*	@Autowired
+	private FileSaver fileSaver;*/
 	
 //	@InitBinder
 //	protected void initBinder(WebDataBinder binder) {

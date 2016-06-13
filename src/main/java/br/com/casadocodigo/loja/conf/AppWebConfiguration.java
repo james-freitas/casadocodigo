@@ -38,7 +38,8 @@ import br.com.casadocodigo.loja.models.ShoppingCart;
 import br.com.casadocodigo.loja.viewresolver.JsonViewResolver;
 
 @EnableWebMvc
-@ComponentScan(basePackageClasses = { HomeController.class, ProductDAO.class, FileSaver.class, ShoppingCart.class })
+@ComponentScan(basePackageClasses = { HomeController.class, 
+		ProductDAO.class, FileSaver.class, ShoppingCart.class })
 @EnableCaching
 public class AppWebConfiguration extends WebMvcConfigurerAdapter{
 
