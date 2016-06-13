@@ -13,7 +13,9 @@
 	
 	<sec:authorize access="isAuthenticated()">
 		<sec:authentication property="principal" var="user" />
-		<div>Olá ${ user.name }</div>
+		<div>
+			<spring:message  code="users.welcome"  arguments="${user.name}" />
+		</div>
 	</sec:authorize>
 
 	<br />
