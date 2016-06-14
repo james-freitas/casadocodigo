@@ -129,7 +129,7 @@ public class AppWebConfiguration extends WebMvcConfigurerAdapter{
 		configurer.enable();
 	}
 	
-	
+	@Bean
 	public MailSender mailSender() {
 		JavaMailSenderImpl javaMailSenderImpl = new JavaMailSenderImpl();
 		javaMailSenderImpl.setHost("smtp.gmail.com");

@@ -30,7 +30,8 @@ public class ServletSpringMVC extends AbstractAnnotationConfigDispatcherServletI
 		return new Class[]{SecurityConfiguration.class, 
 				AppWebConfiguration.class, 
 				JPAConfiguration.class,
-				AmazonConfiguration.class };
+				AmazonConfiguration.class,
+				JPAProductionConfiguration.class};
 	}
 
 	@Override
