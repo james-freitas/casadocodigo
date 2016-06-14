@@ -21,14 +21,14 @@
 <html class="no-js" lang="pt">
 <!--<![endif]-->
 <head>
-<meta charset="utf-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-
-<meta name="viewport"
-content="width=device-width, initial-scale=1,
-maximum-scale=1">
-
-<title>${title}</title>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" >
+	
+	<link rel="stylesheet" href="<c:url value="/resources/css/bootstrap.min.css"/>"> 
+	<link rel="stylesheet" href="<c:url value='/resources/css/core.css' />">
+	
+	<title>${title}</title>
 
 </head>
 
@@ -41,6 +41,9 @@ maximum-scale=1">
 	<%@include file="/WEB-INF/footer.jsp" %>
 	
 	<jsp:invoke fragment="extraScripts" />
+	
+	<script type="text/javascript" src="webjars/jquery/2.1.1/jquery.min.js"></script>
+	<script type="text/javascript" src="webjars/bootstrap/3.2.0/js/bootstrap.min.js"></script>
 	
 </body>
 </html>

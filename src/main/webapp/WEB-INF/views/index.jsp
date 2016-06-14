@@ -9,6 +9,9 @@
 	<link href="<c:url value="../resources/css/bootstrap.min.css"/>" rel="stylesheet">
 	<!-- Loading Flat UI -->
 	<link href="<c:url value="/resources/css/complementar.css"/>" rel="stylesheet" type="text/css">
+	
+	<link rel="stylesheet" href="<c:url value='/resources/css/bootstrap.min.css' />"> 
+	<link rel="stylesheet" href="<c:url value='/resources/css/core.css' />">
 	<link rel="shortcut icon" href="<c:url value="/resources/img/favicon.ico"/>">
 	<!-- HTML5 shim, for IE6-8 support of HTML5 elements. All other JS at the end of file. -->
 	<!--[if lt IE 9]>
